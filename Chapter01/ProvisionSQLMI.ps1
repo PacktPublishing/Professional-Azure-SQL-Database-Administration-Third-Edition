@@ -1,5 +1,5 @@
 <#
-If you are using Pay-as-you-go subscription, do check the managed instance cost
+If you are using Pay-as-you-go subscription, do check the Azure SQL Managed Instance
 #>
 
 param(
@@ -157,8 +157,8 @@ Get-AzNetworkSecurityGroup `
 Write-Host "Creating credential" -ForegroundColor Green
   $creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $miadmin, (ConvertTo-SecureString -String $miadminpassword -AsPlainText -Force)
 
-# Provision managed instance
-Write-Host "Provisioning SQL managed instance $miname" -ForegroundColor Green
+# Provision Azure SQL Managed Instance
+Write-Host "Provisioning Azure SQL Managed Instance $miname" -ForegroundColor Green
 New-AzSqlInstance -Name $miname -ResourceGroupName $ResourceGroup -Location $Location -SubnetId $misubnetid `
                       -AdministratorCredential $creds `
                       -StorageSizeInGB $mistorage -VCore $mivcores -Edition $miedition `
@@ -166,7 +166,7 @@ New-AzSqlInstance -Name $miname -ResourceGroupName $ResourceGroup -Location $Loc
 
 
 <#
-Clean-Up : Remove managed instance
+Clean-Up : Remove Azure SQL Managed Instance
 Remove-AzSqlInstance -Name $miadmin -ResourceGroupName $ResourceGroup -Force
 
 #>
