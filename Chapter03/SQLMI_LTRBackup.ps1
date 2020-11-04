@@ -51,6 +51,6 @@ Restore-AzSqlInstanceDatabase -FromLongTermRetentionBackup -ResourceId $ltrBacku
    -TargetInstanceName $SQLinstanceName -TargetResourceGroupName $ResourceGroup -TargetInstanceDatabaseName $TargetInstancedbName
 
 
-#Clear LTR Policy
+#Remove LTR Policy
 Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -InstanceName $SQLinstanceName `
    -DatabaseName $InstancedbName -ResourceGroupName $ResourceGroup -RemovePolicy
