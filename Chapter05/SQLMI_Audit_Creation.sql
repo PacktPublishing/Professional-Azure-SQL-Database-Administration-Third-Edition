@@ -14,3 +14,7 @@ GO
 ALTER SERVER AUDIT [auditlog]
 WITH (STATE=ON);
 GO
+
+--Verify server audit status
+select name,status,status_desc from sys.dm_server_audit_status where name='Audit-SQLMI';
+
