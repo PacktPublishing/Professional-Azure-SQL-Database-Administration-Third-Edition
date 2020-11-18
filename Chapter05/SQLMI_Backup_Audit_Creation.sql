@@ -40,3 +40,8 @@ DROP SERVER AUDIT SPECIFICATION BackupRestoreAuditSpec
 ALTER SERVER AUDIT [BackupRestoreAudit]
 WITH (STATE=OFF);
 DROP SERVER AUDIT [BackupRestoreAudit]
+
+--Verify cleanup, empty results means server audit is stopped.
+
+select name,status,status_desc from sys.dm_server_audit_status where name='BackupRestoreAudit';
+
