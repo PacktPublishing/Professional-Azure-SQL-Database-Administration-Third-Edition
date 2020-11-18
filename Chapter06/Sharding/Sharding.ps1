@@ -15,15 +15,19 @@ param
     [parameter(Mandatory=$true)]
 	[String] $DatabaseToShard,
     [parameter(Mandatory=$false)]
-	[String] $AzureProfileFilePath
-    
-
+	[String] $AzureProfileFilePath,
+	[parameter(Mandatory=$true)]
+	[String] $Basedirectory="C:\Professional-Azure-SQL-Database-Administration-Third-Edition",
+	[parameter(Mandatory=$true)]
+	[String] $Elasticdbtoolscriptpath="C:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Elastic DB tool scripts"
+	
 )
 
 
 # log the execution of the script
-Start-Transcript -Path ".\Log\Sharding.txt" -Append
-
+Start-Transcript -Path ".\Log\Sharding.txt"
+try
+{
 # Set AzureProfileFilePath relative to the script directory if it's not provided as parameter
 
 if([string]::IsNullOrEmpty($AzureProfileFilePath))
@@ -51,17 +55,18 @@ else
 Set-AzContext -SubscriptionId $SubscriptionID | Out-Null
 
 # Import the ShardManagement module
-Import-Module '..\Elastic DB tool scripts\ShardManagement\ShardManagement.psm1'
+$ShardManagementPath = $Elasticdbtoolscriptpath + "\ShardManagement\ShardManagement.psm1"
+Import-Module $ShardManagementPath
 
 
 $SQLServerFQDN = "$SqlServer.database.windows.net"
 
 
 # Provision a new Azure SQL Database
-# call ProvisionAzureSQLDatabase.ps1 created in lesson 1 to create a new Azure SQL Database to act as Shard Map Manager
+# call ProvisionAzureSQLDatabase.ps1 created in Chapter 1 to create a new Azure SQL Database to act as Shard Map Manager
 
-
-$command = "..\..\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup $ResourceGroup -SQLServer $SqlServer -UserName $UserName -Password $Password -SQLDatabase $ShardMapManagerDatabase -Edition Standard" 
+$path = $Basedirectory + "\Chapter01"
+$command = $path + "\Provision-AzureSQLDatabase.ps1 -ResourceGroup $ResourceGroup -SQLServer $SqlServer -UserName $UserName -Password $Password -SQLDatabase $ShardMapManagerDatabase -Edition Standard -AzureProfileFilePath $AzureProfileFilePath" 
 Invoke-Expression -Command $command
 
 # Setup the shards
@@ -76,22 +81,23 @@ $Shard2 = $DatabaseToShard + "_Shard_200"
 $SqlServercredential = new-object System.Management.Automation.PSCredential($UserName, ($Password | ConvertTo-SecureString -asPlainText -Force)) 
 
 # Create connection context for Azure SQL Database server
-$SqlServerContext = New-AzureSqlDatabaseServerContext -FullyQualifiedServerName $SQLServerFQDN -Credential $SqlServercredential
+#$SqlServerContext = New-AzureSqlDatabaseServerContext -FullyQualifiedServerName $SQLServerFQDN -Credential $SqlServercredential
 
 # Get Azure SQL Database context
-$SqlDatabaseContext = Get-AzureSqlDatabase -ConnectionContext $SqlServerContext -DatabaseName $DatabaseToShard
+#$SqlDatabaseContext = Get-AzureSqlDatabase -ConnectionContext $SqlServerContext -DatabaseName $DatabaseToShard
 
-# Rename the existing database as _shard1
-Set-AzureSqlDatabase -ConnectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDatabaseName $shard1
+#Rename the existing database as _shard1
+Set-AzSqlDatabase -ServerName $SqlServer -ResourceGroupName $ResourceGroup -DatabaseName $DatabaseToShard -NewName $shard1
 
 # create shard2 Azure SQL Database
-$command1 = "..\..\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup $ResourceGroup -SQLServer $SqlServer -UserName $UserName -Password $Password -SQLDatabase $shard2 -Edition Standard" 
+$command1 = "$path\Provision-AzureSQLDatabase.ps1 -ResourceGroup $ResourceGroup -SQLServer $SqlServer -UserName $UserName -Password $Password -SQLDatabase $shard2 -Edition Standard -AzureProfileFilePath $AzureProfileFilePath" 
 Invoke-Expression -Command $command1
-
+	
 
 # Create tables to be sharded in Shard2
-$files = Get-ChildItem -Path ".\TableScripts\"
-
+$scriptpath = $Basedirectory + "\Chapter06\Sharding\TableScripts\"
+$files = Get-ChildItem -Path $scriptpath
+# SQLServer PowerShell module is required to run Invoke-Sqlcmd cmdlet.
 ForEach($file in $files)
 { 
     Write-Host "Creating table $file in $shard2" -ForegroundColor Green
@@ -99,7 +105,7 @@ ForEach($file in $files)
 }
 
 
-# Register the database created above as Shard Map Manager
+# Register the database created above as Shard Map Manager ($ShardMapManagerDatabase)
 
 Write-host "Configuring database $ShardMapManagerDatabase as Shard Map Manager" -ForegroundColor Green
 $ShardMapManager = New-ShardMapManager -UserName $UserName -Password $Password -SqlServerName $SQLServerFQDN  -SqlDatabaseName $ShardMapManagerDatabase  -ReplaceExisting $true
@@ -155,3 +161,7 @@ else
 }
 
 Write-host "$DatabaseToShard is now Sharded." -ForegroundColor Green
+}catch
+{
+	write-host $_
+}
