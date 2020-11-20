@@ -1,6 +1,6 @@
 ﻿#setting up variable as per your environment
 $subscription = "6ff855b5-xxxx-4bc2-xxxx-xxxxxxxxx"
-$manangedInstance = "packtsqlmi"
+$managedInstance = "packtsqlmi"
 $resourceGroup = "Packt"
 
 
