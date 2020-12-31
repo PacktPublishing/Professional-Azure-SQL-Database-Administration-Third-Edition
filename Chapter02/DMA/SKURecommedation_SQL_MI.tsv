@@ -1,0 +1,3 @@
+DatabaseName(s)	MetricType	MetricValue	PricePerMonth	RegionName	IsTierRecommended	ExclusionReasons	AppliedRules
+StackOverflow2010, toystore	GENERAL_PURPOSE_GEN_5_MI	GP_GEN5_24_MI	4774.78	defaultregion	True		
+StackOverflow2010, toystore	BUSINESS_CRITICAL_GEN_5_MI	BC_GEN5_24_MI	12675.60	defaultregion	False	There is a less expensive SKU that can host the database.	Price

@@ -1,0 +1,65 @@
+12/10/20 16:18:13.328 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\ostress.log]
+12/10/20 16:18:13.334 [0x00001A38] OSTRESS, A Generic ODBC-Based Stress/Replay Utility.
+Version 9.04.0051 built for x64.
+Copyright © 1997-2014 Microsoft. All Rights Reserved
+12/10/20 16:18:13.334 [0x00001A38]             Computer: XENA
+12/10/20 16:18:13.335 [0x00001A38]          Base Module: C:\Program Files\Microsoft Corporation\RMLUtils\ostress.exe
+12/10/20 16:18:13.335 [0x00001A38]           Process Id: 5452
+12/10/20 16:18:13.336 [0x00001A38]  Active proc mask(0): 0x00000001
+12/10/20 16:18:13.336 [0x00001A38]         Architecture: 9
+12/10/20 16:18:13.337 [0x00001A38]            Page size: 4096
+12/10/20 16:18:13.337 [0x00001A38]                 CPUs: 1
+12/10/20 16:18:13.337 [0x00001A38]     Processor groups: 1
+12/10/20 16:18:13.337 [0x00001A38]         Highest node: 0
+12/10/20 16:18:13.337 [0x00001A38]   Proximity: 00  Node: 00
+12/10/20 16:18:13.337 [0x00001A38] ---------------------------------------
+12/10/20 16:18:13.338 [0x00001A38]                Group: 0
+12/10/20 16:18:13.338 [0x00001A38] ---------------------------------------
+12/10/20 16:18:13.339 [0x00001A38]         Package mask: 0x00000001
+12/10/20 16:18:13.339 [0x00001A38]         Processor(s): 0x00000001 Function units: Separated
+12/10/20 16:18:13.339 [0x00001A38]         Processor(s): 0x00000001 assigned to Numa node: 0
+12/10/20 16:18:13.340 [0x00001A38] Current time bias: -330 minutes -5.50 hours DST not used 
+12/10/20 16:18:13.340 [0x00001A38] WARNING: -o parameter was not supplied; using default output path of <temporary directory>\output [C:\Users\Ahmad\AppData\Local\Temp\output\]
+12/10/20 16:18:13.340 [0x00001A38] Max threads setting: 10000
+12/10/20 16:18:13.340 [0x00001A38] Arguments:
+12/10/20 16:18:13.341 [0x00001A38] -Spacktdbserver.database.windows.net
+12/10/20 16:18:13.341 [0x00001A38] -Uaosama
+12/10/20 16:18:13.341 [0x00001A38] -P********
+12/10/20 16:18:13.361 [0x00001A38] -dtoystore
+12/10/20 16:18:13.361 [0x00001528] I/O Completion manager started
+12/10/20 16:18:13.363 [0x00001A38] -i.\workload.sql
+12/10/20 16:18:13.364 [0x00001A38] -n25
+12/10/20 16:18:13.364 [0x00001A38] -r30
+12/10/20 16:18:13.364 [0x00001A38] -q
+12/10/20 16:18:13.365 [0x00001A38] Using language id (LCID): 1024 [English_United States.1252] for character formatting with NLS: 0x0006020F and Defined: 0x0006020F
+12/10/20 16:18:13.365 [0x00001A38] Default driver: SQL Server Native Client 11.0
+12/10/20 16:18:13.366 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload.out]
+12/10/20 16:18:13.368 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_1.out]
+12/10/20 16:18:13.370 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_2.out]
+12/10/20 16:18:13.373 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_3.out]
+12/10/20 16:18:13.376 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_4.out]
+12/10/20 16:18:13.377 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_5.out]
+12/10/20 16:18:13.380 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_6.out]
+12/10/20 16:18:13.382 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_7.out]
+12/10/20 16:18:13.391 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_8.out]
+12/10/20 16:18:13.394 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_9.out]
+12/10/20 16:18:13.396 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_10.out]
+12/10/20 16:18:13.399 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_11.out]
+12/10/20 16:18:13.402 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_12.out]
+12/10/20 16:18:13.412 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_13.out]
+12/10/20 16:18:13.415 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_14.out]
+12/10/20 16:18:13.417 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_15.out]
+12/10/20 16:18:13.421 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_16.out]
+12/10/20 16:18:13.427 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_17.out]
+12/10/20 16:18:13.430 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_18.out]
+12/10/20 16:18:13.434 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_19.out]
+12/10/20 16:18:13.438 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_20.out]
+12/10/20 16:18:13.443 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_21.out]
+12/10/20 16:18:13.445 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_22.out]
+12/10/20 16:18:13.449 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_23.out]
+12/10/20 16:18:13.450 [0x00001A38] Attempting DOD5015 removal of [C:\Users\Ahmad\AppData\Local\Temp\output\workload_24.out]
+12/10/20 16:18:13.457 [0x00001A38] Starting query execution...
+12/10/20 16:18:13.459 [0x00001A38]  BETA: Custom CLR Expression support enabled.
+12/10/20 16:18:13.460 [0x00001A38] Creating 25 thread(s) to process queries
+12/10/20 16:18:13.465 [0x00001A38] Worker threads created, beginning execution...
+12/10/20 16:29:52.401 [0x00001274] Exiting because of Ctrl-C/Ctrl-Break...

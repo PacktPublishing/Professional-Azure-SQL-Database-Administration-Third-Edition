@@ -1,0 +1,183 @@
+**********************
+PowerShell transcript start
+Start time: 20201118202347
+Username: XENA\Ahmad
+RunAs User: XENA\Ahmad
+Configuration Name: 
+Machine: XENA (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Ahmad\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Ahmad\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Ahmad\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1605711170-27a4a0c7-537e-4ace-a713-295b51c5297c1605711161576\EditorServices.log' -SessionDetailsPath 'c:\Users\Ahmad\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-3288-356530' -FeatureFlags @() 
+Process ID: 4972
+PSVersion: 7.0.0
+PSEdition: Core
+GitCommitId: 7.0.0
+OS: Microsoft Windows 10.0.18363
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\Log\Sharding.txt
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+ResourceGroupName : packt
+Location          : centralus
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt
+
+
+
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt/providers/Microsoft.Sql/servers/packtdbserver
+ResourceGroupName        : packt
+ServerName               : packtdbserver
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     : {}
+Identity                 :
+FullyQualifiedDomainName : packtdbserver.database.windows.net
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt/providers/Microsoft.Sql/servers/packtdbserver/databas
+                                es/toystoreshardmapmgr
+ResourceGroupName             : packt
+ServerName                    : packtdbserver
+DatabaseName                  : toystoreshardmapmgr
+Location                      : eastus2
+DatabaseId                    : f1658b34-0081-4552-9746-fca9c39ef91b
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 11/18/2020 1:40:20 PM
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveName : S0
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 11/18/2020 1:49:39 PM
+Tags                          :
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 10
+Family                        :
+SkuName                       : Standard
+LicenseType                   :
+AutoPauseDelayInMinutes       :
+MinimumCapacity               :
+ReadReplicaCount              : 0
+
+
+Creating firewall rule for  with StartIP: 103.211.19.177 and EndIP: 103.211.19.177
+
+ResourceGroupName : packt
+ServerName        : packtdbserver
+StartIpAddress    : 103.211.19.177
+EndIpAddress      : 103.211.19.177
+FirewallRuleName  : PacktPub_20201118201102
+
+
+Set-AzSqlDatabase: C:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Sharding\Sharding.ps1:91:1
+Line |
+  91 |  Set-AzSqlDatabase -ServerName $SqlServer -ResourceGroupName $Resource ?
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The Resource 'Microsoft.Sql/servers/packtdbserver/databases/toystore' under resource group 'packt' was not found. For more details please go to
+     | https://aka.ms/ARMResourceNotFoundFix
+
+[91mSet-AzSqlDatabase: [0mC:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Sharding\Sharding.ps1:91:1
+[96mLine |
+[96m  91 | [0m [96mSet-AzSqlDatabase -ServerName $SqlServer -ResourceGroupName $Resource[0m ?
+[96m     | [91m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[91m[96m     | [91mThe Resource 'Microsoft.Sql/servers/packtdbserver/databases/toystore' under resource group 'packt' was not found. For more details please go
+[96m     | [91mto https://aka.ms/ARMResourceNotFoundFix
+[0m
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+ResourceGroupName : packt
+Location          : centralus
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt
+
+
+
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt/providers/Microsoft.Sql/servers/packtdbserver
+ResourceGroupName        : packt
+ServerName               : packtdbserver
+Location                 : eastus2
+SqlAdministratorLogin    : aosama
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     : {}
+Identity                 :
+FullyQualifiedDomainName : packtdbserver.database.windows.net
+MinimalTlsVersion        :
+PublicNetworkAccess      : Enabled
+
+
+Provisioning Azure SQL Database toystore_Shard_200
+
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt/providers/Microsoft.Sql/servers/packtdbserver/databas
+                                es/toystore_Shard_200
+ResourceGroupName             : packt
+ServerName                    : packtdbserver
+DatabaseName                  : toystore_Shard_200
+Location                      : eastus2
+DatabaseId                    : 8a827fb1-a989-4932-b4ac-aeefe3ae1f98
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 11/18/2020 2:55:26 PM
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveName : S0
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 11/18/2020 3:25:26 PM
+Tags                          :
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 10
+Family                        :
+SkuName                       : Standard
+LicenseType                   :
+AutoPauseDelayInMinutes       :
+MinimumCapacity               :
+ReadReplicaCount              : 0
+
+Creating firewall rule for  with StartIP: 103.211.19.177 and EndIP: 103.211.19.177
+
+ResourceGroupName : packt
+ServerName        : packtdbserver
+StartIpAddress    : 103.211.19.177
+EndIpAddress      : 103.211.19.177
+FirewallRuleName  : PacktPub_20201118201126
+
+Creating table C:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Sharding\TableScripts\1_CreateSchemas.sql in toystore_Shard_200
+Creating table C:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Sharding\TableScripts\2_Application.Countries.sql in toystore_Shard_200
+Creating table C:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Sharding\TableScripts\3_Sales.Customer.sql in toystore_Shard_200
+Creating table C:\Professional-Azure-SQL-Database-Administration-Third-Edition\Chapter06\Sharding\TableScripts\4_Sales.Orders.sql in toystore_Shard_200
+Configuring database toystoreshardmapmgr as Shard Map Manager
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1_100 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+computerName                   XENA
+instanceId                     f3c28d74-ef5f-44fd-87e6-e45d3eb26c56
+processId                      4972
+
