@@ -72,17 +72,17 @@ if([string]::IsNullOrEmpty($ServiceObjective))
         }
         elseif ($Edition -eq "GeneralPurpose")
         {
-            $ServiceObjective = "GP_Gen4_2"
+            $ServiceObjective = "GP_Gen5_2"
             
         }
         elseif ($Edition -eq "BusinessCritical")
         {
-            $ServiceObjective = "BC_Gen4_1"
+            $ServiceObjective = "BC_Gen5_1"
             
         }
          elseif ($Edition -eq "Hyperscale")
         {
-            $ServiceObjective = "HS_Gen4_1"
+            $ServiceObjective = "HS_Gen5_1"
             
         }
 }
